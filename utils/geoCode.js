@@ -6,14 +6,17 @@ const geoCode = (location) => {
         location
     )}.json?access_token=pk.eyJ1Ijoic3dhYXkiLCJhIjoiY2t3bWF4dWQzMmFiNDJubm9pM3Fpa2k0cCJ9.JwnUWseFBuSRnLT5WCuIcg&limit=1`;
 
-    request({ url, json: true }, (error, { body } = {}) => {
-        if (error) {
-            console.log("ERROR!!");
-        }
-        console.log(body.features[0].geometry.coordinates);
-    });
+    const findCoordinates = () =>
+        new Promise((resolve, reject) => {
+            request({ url, json: true }, (error, response, body) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve(body.features[0].geometry.coordinates);
+                }
+            });
+        });
+    return findCoordinates();
 };
-
-geoCode("New York");
 
 module.exports = geoCode;

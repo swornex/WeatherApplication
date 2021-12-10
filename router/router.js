@@ -3,7 +3,7 @@ const controller = require("../controller/controller");
 
 const router = Router();
 
-router.get("/", controller);
+router.get("/", controller.index);
 
-//router.get("/about", (request, response) => {});
+router.get("/weather", controller.weather);
 module.exports = router;
