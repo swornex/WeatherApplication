@@ -12,7 +12,8 @@ const geoCode = (location) => {
                 if (error) {
                     reject(error);
                 } else {
-                    resolve(body.features[0].geometry.coordinates);
+                    const { place_name, geometry } = body.features[0];
+                    resolve({ place_name, coordinates: geometry.coordinates });
                 }
             });
         });
