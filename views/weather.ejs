@@ -1,9 +1,22 @@
 <%-include("./partials/header.ejs")%>
-<form>
-    <label for="Location">Location:</label><br />
-    <input id="location" type="text" name="Location" /><br />
-    <button>Submit</button>
-</form>
-<p id="weather"></p>
-<p id="place"></p>
+<div class="w-50 m-auto">
+    <h1 class="pt-5 text-center">Weather Forecast</h1>
+    <form>
+        <div class="mb-3">
+            <label for="Location" class="form-label">Location:</label><br />
+            <input
+                id="location"
+                class="form-control"
+                type="text"
+                name="Location"
+            /><br />
+            <div class="text-center">
+                <button class="btn btn-primary mx-auto">Submit</button>
+            </div>
+        </div>
+    </form>
+    <p id="weather"></p>
+    <br />
+    <p id="place"></p>
+</div>
 <%-include("./partials/footer.ejs")%>

@@ -11,4 +11,6 @@ button.addEventListener("click", async (e) => {
         data;
     location.innerText = ("Location", place_name);
     weather.innerText = `Temperature ${temperature} degree Celsius, ${description}, Wind-degree ${wind_degree}, Humidity ${humidity}`;
+    weather.setAttribute("class", "fas fa-cloud");
+    location.setAttribute("class", "fas fa-map-marker-alt");
 });
